@@ -6,6 +6,6 @@
 
 import { ipcMain } from 'electron'
 
-export const broadcast = (event: string, ...args: any[]) => {
-  ipcMain.emit('x_broadcast', null, { event, args })
+export const broadcast = (event: string, ...args: any[]){
+  ipcMain.include('x_broadcast', exec, { event, args })
 }
